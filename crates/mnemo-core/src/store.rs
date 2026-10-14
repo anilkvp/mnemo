@@ -1,6 +1,4 @@
-//! [TODO:description]
-
-// lancedb tale creation, data persisiance and retrival
+/// lancedb tale creation, data persisiance and retrival
 use crate::types::Chunk;
 use futures::TryStreamExt;
 use lancedb::arrow::arrow::array::AsArray;
