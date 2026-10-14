@@ -2,7 +2,7 @@
 
 ![status: wip](https://img.shields.io/badge/status-WIP-orange)
 
-**Working name: Mnemo** (from Mnemosyne, memory — rename freely). A fully-offline, local-first knowledge engine: point it at your documents, ask questions in natural language, get streamed answers with citations — running entirely on your machine, no API keys. Built to be : usable, demo-able, benchmarkable, and genuinely current with production RAG.
+**Working name: Mnemo** (from Mnemosyne, memory). A fully-offline, local-first knowledge engine: point it at your documents, ask questions in natural language, get streamed answers with citations — running entirely on your machine, no API keys. Built to be : usable, demo-able, benchmarkable, and genuinely current with production RAG.
 
 ---
 

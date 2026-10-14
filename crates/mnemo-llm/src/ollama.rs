@@ -1,3 +1,4 @@
+/// Ollama
 use futures::Stream;
 
 use futures::TryStreamExt;
@@ -67,6 +68,7 @@ impl Ollama {
         }
     }
 
+    /// Check ollama is up and runing also model configured is the model list
     pub async fn check_ready(&self) -> anyhow::Result<()> {
         #[derive(Deserialize)]
         struct Tags {
@@ -101,6 +103,11 @@ impl Ollama {
         Ok(())
     }
 
+    /// [TODO:description]
+    ///
+    /// * `messages`: [TODO:parameter]
+    /// * `temperature`: [TODO:parameter]
+    /// * `num_ctx`: [TODO:parameter]
     pub async fn chat(
         &self,
         messages: &[Message],
@@ -111,6 +118,11 @@ impl Ollama {
             .await
     }
 
+    /// [TODO:description]
+    ///
+    /// * `messages`: [TODO:parameter]
+    /// * `temperature`: [TODO:parameter]
+    /// * `num_ctx`: [TODO:parameter]
     pub async fn chat_json(
         &self,
         messages: &[Message],
@@ -121,6 +133,11 @@ impl Ollama {
             .await
     }
 
+    /// [TODO:description]
+    ///
+    /// * `messages`: [TODO:parameter]
+    /// * `temperature`: [TODO:parameter]
+    /// * `num_ctx`: [TODO:parameter]
     pub async fn chat_stream(
         &self,
         messages: &[Message],
