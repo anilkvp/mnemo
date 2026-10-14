@@ -1,0 +1,27 @@
+# ~/.cargo/config.toml
+[build]
+rustc-wrapper = "sccache"
+jobs = 8
+# ~/.cargo/config.toml  (or .cargo/config.toml in the project)
+[profile.release]
+strip = true
+lto = true
+
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+
+#
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+opt-level = 0 # or delete the override entirely
+debug = false
+
+# If you need fast runtime for embedding/inference only, optimize just those:
+[profile.dev.package.ort]
+opt-level = 2
+[profile.dev.package.tokenizers]
+opt-level = 2

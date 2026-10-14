@@ -1,0 +1,16 @@
+[package]
+name = "mnemo-core"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+mnemo-llm = { path = "../mnemo-llm" }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+tokio = { version = "1.53.1", features = ["full"] }
+tracing = "0.1.44"
+text-splitter = "0.33.0"
+anyhow = "1.0.104"
+fastembed = "7.1.0"
+lancedb = { version = "0.39.0", features = ["remote"] }
+futures = "0.3.34"
