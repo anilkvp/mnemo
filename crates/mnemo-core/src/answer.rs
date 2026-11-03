@@ -5,7 +5,7 @@ use mnemo_llm::ollama::Message;
 use crate::{
     embed::Embedder,
     retrieve::{HybridParams, hybrid_search},
-    store::{Hits, Store},
+    store::{Hit, Store},
 };
 
 const MAX_DISTANCE: f32 = 0.45;
@@ -18,7 +18,7 @@ Rules:
     - Do not use outside knowledge. Be concise.
 ";
 
-pub fn build_messages(question: &str, hits: &[Hits]) -> Vec<Message> {
+pub fn build_messages(question: &str, hits: &[Hit]) -> Vec<Message> {
     let mut sources = String::new();
     for (i, hit) in hits.iter().enumerate() {
         sources.push_str(&format!("[{}] from {} \n{}\n\n", i + 1, hit.path, hit.text));
@@ -33,7 +33,7 @@ pub enum AskPlan {
     NoContext,
     Ready {
         messages: Vec<Message>,
-        sources: Vec<Hits>,
+        sources: Vec<Hit>,
     },
 }
 

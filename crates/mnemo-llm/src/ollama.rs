@@ -33,6 +33,8 @@ impl Message {
 struct Options {
     temperature: f32,
     num_ctx: u32,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    num_predict: Option<u32>,
 }
 
 #[derive(Serialize)]
@@ -50,6 +52,7 @@ struct ChatRequest<'a> {
 struct ChatChunk {
     message: Option<Message>,
     done: bool,
+    error: Option<String>,
 }
 
 #[derive(Clone)]
@@ -66,6 +69,41 @@ impl Ollama {
             base_url: base_url.into(),
             model: model.into(),
         }
+    }
+
+    pub fn model_name(&self) -> String {
+        self.model.clone()
+    }
+
+    pub async fn complete(&self, messages: &[Message], max_token: u32) -> anyhow::Result<String> {
+        let body = ChatRequest {
+            messages: messages,
+            model: &self.model,
+            stream: false,
+            format: None,
+            options: Options {
+                temperature: 0.0,
+                num_ctx: 8192,
+                num_predict: Some(max_token),
+            },
+            think: false,
+        };
+
+        let chunk: ChatChunk = self
+            .http
+            .post(format!("{}/api/chat", self.base_url))
+            .json(&body)
+            .send()
+            .await?
+            .error_for_status()?
+            .json()
+            .await?;
+
+        if let Some(err) = chunk.error {
+            anyhow::bail!("ollama error {err}");
+        }
+
+        Ok(chunk.message.map(|m| m.content).unwrap_or_default())
     }
 
     /// Check ollama is up and runing also model configured is the model list
@@ -153,6 +191,7 @@ impl Ollama {
             options: Options {
                 temperature,
                 num_ctx,
+                num_predict: None,
             },
         };
 
@@ -189,6 +228,7 @@ impl Ollama {
             options: Options {
                 temperature,
                 num_ctx,
+                num_predict: None,
             },
         };
 

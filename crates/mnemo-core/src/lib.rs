@@ -1,7 +1,10 @@
 // mnemo-core lib
 pub mod answer;
+pub mod context;
 pub mod embed;
 pub mod ingest;
+pub mod load;
+pub mod rerank;
 pub mod retrieve;
 pub mod store;
 pub mod types;

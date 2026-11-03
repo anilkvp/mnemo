@@ -3,6 +3,8 @@ use std::sync::Mutex;
 
 use fastembed::{TextEmbedding, TextInitOptions};
 
+use crate::types::Chunk;
+
 pub struct Embedder {
     model: Mutex<TextEmbedding>,
 }
@@ -36,5 +38,20 @@ impl Embedder {
         embeddings
             .pop()
             .ok_or_else(|| anyhow::anyhow!("embedding model return no vector"))
+    }
+
+    pub fn embed_chunks(&mut self, chunks: &mut [Chunk]) -> anyhow::Result<()> {
+        let mut emb_model = self
+            .model
+            .lock()
+            .map_err(|_| anyhow::anyhow!("embedding model lock poised"))?;
+        for c in chunks.iter_mut() {
+            let e = match emb_model.embed([c.text.to_string()], None) {
+                Ok(mut ev) => ev.pop(),
+                Err(_) => None,
+            };
+            c.embedding = e;
+        }
+        Ok(())
     }
 }

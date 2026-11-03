@@ -6,40 +6,70 @@ use std::{
     pin::pin,
 };
 
+use clap::Args;
 use clap::Parser;
 use clap::Subcommand;
 use futures::StreamExt;
 use mnemo_core::answer::AskPlan;
+use mnemo_core::context::Contextulizer;
+use mnemo_core::ingest::{IngestionOptions, IngestionOutcome, ingest_document};
+use mnemo_core::rerank::Reranker;
+use mnemo_core::retrieve::{RetrieveParams, retrieve};
 use mnemo_core::{
     answer::plan_answer,
     embed::Embedder,
-    ingest::load_and_chunk,
     retrieve::{HybridParams, hybrid_search},
     store::Store,
 };
 use mnemo_llm::ollama::Ollama;
+use tracing::{info, warn};
+use tracing_subscriber::{EnvFilter, fmt, prelude::*};
 
 #[derive(Parser, Debug)]
 #[command(name = "mnemo", version = "0.0.1", about = "Offline data mining")]
 struct Cli {
+    /// Data store path
     #[arg(short, long)]
     data_dir: Option<PathBuf>,
 
+    /// Operation command
     #[command(subcommand)]
     operation: Operation,
+}
+#[derive(Args, Debug)]
+struct RetrievalOpts {
+    /// No rerank
+    #[arg(long)]
+    no_rerank: bool,
+    /// Rerank pool size.
+    #[arg(long, default_value_t = 30)]
+    rerank_pool: usize,
 }
 
 #[derive(Subcommand, Debug)]
 enum Operation {
+    /// Index the input file or files in the folder.
     Index {
+        /// File or folder to index
         #[arg(short, long)]
         path: PathBuf,
+
+        #[arg(short, long)]
+        contextulize: bool,
     },
+    /// Search the given query in the index and return matching
     Search {
+        /// Search query
         #[arg(short, long)]
         query: String,
+
+        /// Search options
+        #[command(flatten)]
+        opts: RetrievalOpts,
     },
+    /// Ask a question and return answer with available indexed data
     Ask {
+        /// User query
         #[arg(short, long)]
         question: String,
     },
@@ -47,37 +77,76 @@ enum Operation {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    tracing_subscriber::registry()
+        .with(EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info")))
+        .with(fmt::layer())
+        .init();
     let args = Cli::parse();
 
     let data_dir = match args.data_dir {
         Some(path) => path,
         None => {
-            let path = Path::new("~/");
+            let path = Path::new("./data");
             path.to_path_buf()
         }
     };
+    info!("Using data_dir {:?}", data_dir);
     match &args.operation {
-        Operation::Index { path } => {
-            let chunks = load_and_chunk(path)?;
-            let db = Store::open(data_dir.join("db")).await?;
-            let status = db.upsert(&chunks).await?;
-            db.build_fts_index().await?;
-            println!("Upsert stats = {status:?}");
-        }
-        Operation::Search { query } => {
-            let p = HybridParams {
-                candidates: 5,
-                rrf_k: 60.0,
-                top_k: 3,
+        Operation::Index { path, contextulize } => {
+            let ctx = if *contextulize {
+                let llm = Ollama::new("http://localhost:11434", "qwen3.5:4b");
+                llm.check_ready().await?;
+                Some(&Contextulizer::new(llm))
+            } else {
+                None
             };
-            let db = Store::open(data_dir.join("db")).await?;
+            let files = mnemo_core::load::get_files(path)?;
+            info!("files to be indexed {:?}", files);
+            let store = Store::open(data_dir.join("db")).await?;
             let mut embedder = Embedder::new()?;
-            let retrieved = hybrid_search(&db, &mut embedder, query, &p).await?;
-            for h in retrieved.hits {
-                println!("Score {0}\n{1}\n\n", h.score, h.text);
+            let ingestopts = IngestionOptions {
+                contextual: *contextulize,
+            };
+            for file in files {
+                let ingestoutput =
+                    ingest_document(&store, &mut embedder, ctx, file, &ingestopts).await?;
+                match ingestoutput {
+                    IngestionOutcome::Unchanged => info!("No change in indexing"),
+                    IngestionOutcome::Indexed(cks) => info!("Indexed {cks} chunks"),
+                }
+            }
+        }
+        Operation::Search { query, opts } => {
+            info!("Peforming search with \"{}\"", query);
+            let store = Store::open(data_dir.join("db")).await?;
+            let mut embedder = Embedder::new()?;
+            if opts.no_rerank {
+                let p = HybridParams {
+                    candidates: 5,
+                    rrf_k: 60.0,
+                    top_k: 3,
+                };
+                let retrieved = hybrid_search(&store, &mut embedder, query, &p).await?;
+                for h in retrieved.hits {
+                    info!("Score {0}\n{1}\n\n", h.score, h.text);
+                }
+            } else {
+                let p = RetrieveParams {
+                    candidates: 5,
+                    rerank_pool: opts.rerank_pool,
+                    top_k: 3,
+                    rrf_k: 60.0,
+                    rerank: true,
+                };
+                let reranker = Reranker::new(data_dir.join("reranker"))?;
+                let retrived = retrieve(&store, &mut embedder, &reranker, query, &p).await?;
+                for h in retrived.hits {
+                    info!("Score {0}\n{1}\n\n", h.score, h.text);
+                }
             }
         }
         Operation::Ask { question } => {
+            info!("User asked \"{}\"", question);
             let ollama_cli = Ollama::new(
                 "http://localhost:11434".to_string(),
                 "qwen3.5:4b".to_string(),
@@ -92,7 +161,7 @@ async fn main() -> anyhow::Result<()> {
             let db = Store::open(data_dir.join("db")).await?;
             let mut embedder = Embedder::new()?;
             match plan_answer(&db, &mut embedder, question, &p).await? {
-                AskPlan::NoContext => println!("I dont know based on the indexed document"),
+                AskPlan::NoContext => warn!("I dont know based on the indexed document"),
                 AskPlan::Ready {
                     messages,
                     sources: _,
@@ -104,7 +173,7 @@ async fn main() -> anyhow::Result<()> {
 
                     while let Some(token) = resp.next().await {
                         let token = token?;
-                        print!("{token}");
+                        info!("{token}");
                         std::io::stdout().flush()?;
                         answer.push_str(&token);
                     }
