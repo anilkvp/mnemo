@@ -2,7 +2,7 @@
 use crate::types::{Chunk, DocId, Document};
 use futures::TryStreamExt;
 use lancedb::arrow::arrow::array::AsArray;
-use lancedb::arrow::arrow::datatypes::UInt32Type;
+use lancedb::arrow::arrow::datatypes::{UInt32Type, UInt64Type};
 use lancedb::arrow::arrow_array::{Array, Int64Array, UInt64Array};
 use lancedb::arrow::arrow_array::{
     FixedSizeListArray, RecordBatch, RecordBatchIterator, RecordBatchReader, StringArray,
@@ -13,11 +13,10 @@ use lancedb::index::Index;
 use lancedb::index::scalar::{FtsIndexBuilder, FullTextSearchQuery};
 use lancedb::query::QueryBase;
 use lancedb::query::{ExecutableQuery, Select};
-use lancedb::{Connection, Table, connect};
+use lancedb::{Table, connect};
 use std::path::Path;
 use std::sync::Arc;
 use tracing::debug;
-use tracing::field::debug;
 
 /// chunk table name
 const CHUNKS_TABLE: &str = "chunks";
@@ -27,7 +26,6 @@ const DIM: i32 = 384;
 const RESULT_COLS: &[&str] = &["doc_id", "chunk_index", "title", "text", "path", "context"];
 
 pub struct Store {
-    db: Connection,
     table_chunk: Table,
     table_document: Table,
 }
@@ -40,7 +38,7 @@ pub enum RetrievalSource {
 
 #[derive(Debug, Clone)]
 pub struct Hit {
-    pub doc_id: String,
+    pub doc_id: DocId,
     pub chunk_index: u32,
     pub title: String,
     pub text: String,
@@ -88,7 +86,6 @@ impl Store {
             }
         };
         Ok(Self {
-            db,
             table_chunk: chunks,
             table_document: documents,
         })
@@ -265,7 +262,7 @@ fn process_result(data: Vec<RecordBatch>, score_col: &str) -> anyhow::Result<Vec
             rb.column_by_name(name)
                 .ok_or_else(|| anyhow::anyhow!("missing column name {name}"))
         };
-        let ids = col("doc_id")?.as_string::<i32>();
+        let ids = col("doc_id")?.as_primitive::<UInt64Type>();
         let indexes = col("chunk_index")?.as_primitive::<UInt32Type>();
         let titles = col("title")?.as_string::<i32>();
         let texts = col("text")?.as_string::<i32>();
@@ -275,7 +272,7 @@ fn process_result(data: Vec<RecordBatch>, score_col: &str) -> anyhow::Result<Vec
 
         for i in 0..rb.num_rows() {
             result.push(Hit {
-                doc_id: ids.value(i).to_owned(),
+                doc_id: DocId(ids.value(i)),
                 chunk_index: indexes.value(i),
                 title: titles.value(i).to_owned(),
                 text: texts.value(i).to_owned(),

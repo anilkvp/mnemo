@@ -51,7 +51,6 @@ struct ChatRequest<'a> {
 #[derive(Deserialize, Debug)]
 struct ChatChunk {
     message: Option<Message>,
-    done: bool,
     error: Option<String>,
 }
 
@@ -75,9 +74,13 @@ impl Ollama {
         self.model.clone()
     }
 
+    /// [TODO:description]
+    ///
+    /// * `messages`: [TODO:parameter]
+    /// * `max_token`: [TODO:parameter]
     pub async fn complete(&self, messages: &[Message], max_token: u32) -> anyhow::Result<String> {
         let body = ChatRequest {
-            messages: messages,
+            messages,
             model: &self.model,
             stream: false,
             format: None,

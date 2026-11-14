@@ -17,6 +17,7 @@ pub struct Retrieved {
     pub best_distance: Option<f32>,
 }
 
+#[derive(Default, Debug)]
 pub struct RetrieveParams {
     pub candidates: usize,  // per retrieve, e.g. 50
     pub rerank_pool: usize, // fused  candidates sent to reranker, e.g. 10
@@ -51,7 +52,7 @@ pub fn rrf_fuse(lists: &[Vec<Hit>], rrf_k: f32, top_k: usize) -> Vec<Hit> {
         for (rank, hits) in list.iter().enumerate() {
             let contribusion = 1.0 / (rrf_k + rank as f32 + 1.0);
             fused
-                .entry((hits.doc_id.clone(), hits.chunk_index))
+                .entry((hits.doc_id.to_string(), hits.chunk_index))
                 .and_modify(|h| h.score += contribusion)
                 .or_insert_with(|| Hit {
                     score: contribusion,

@@ -21,6 +21,7 @@ use mnemo_core::{
     retrieve::{HybridParams, hybrid_search},
     store::Store,
 };
+use mnemo_eval::report::ModeMetrics;
 use mnemo_llm::ollama::Ollama;
 use tracing::{info, warn};
 use tracing_subscriber::{EnvFilter, fmt, prelude::*};
@@ -73,14 +74,23 @@ enum Operation {
         #[arg(short, long)]
         question: String,
     },
+    Eval {
+        #[arg(long, default_value = "eval/dataset.jsonl")]
+        path: PathBuf,
+        #[arg(long, default_value_t = 8)]
+        k: usize,
+
+        #[arg(long, default_value = "eval/results.jsonl")]
+        result: PathBuf,
+    },
 }
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    tracing_subscriber::registry()
-        .with(EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info")))
-        .with(fmt::layer())
-        .init();
+    // tracing_subscriber::registry()
+    //     .with(EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info")))
+    //     .with(fmt::layer())
+    //     .init();
     let args = Cli::parse();
 
     let data_dir = match args.data_dir {
@@ -90,34 +100,44 @@ async fn main() -> anyhow::Result<()> {
             path.to_path_buf()
         }
     };
-    info!("Using data_dir {:?}", data_dir);
-    match &args.operation {
+    println!("Using data_dir {:?}", data_dir);
+    match args.operation {
         Operation::Index { path, contextulize } => {
-            let ctx = if *contextulize {
+            let ctx = if contextulize {
                 let llm = Ollama::new("http://localhost:11434", "qwen3.5:4b");
                 llm.check_ready().await?;
                 Some(&Contextulizer::new(llm))
             } else {
                 None
             };
-            let files = mnemo_core::load::get_files(path)?;
-            info!("files to be indexed {:?}", files);
+            let files = mnemo_core::load::get_files(&path)?;
+            println!("files to be indexed {:?}", files);
+            let bar = indicatif::ProgressBar::new(files.len() as u64);
+            bar.set_style(indicatif::ProgressStyle::with_template(
+                "{bar:40} {pos}/{len} docs  {elapsed_precise} elapsed  ~{eta} left  {msg}",
+            )?);
             let store = Store::open(data_dir.join("db")).await?;
             let mut embedder = Embedder::new()?;
             let ingestopts = IngestionOptions {
-                contextual: *contextulize,
+                contextual: contextulize,
             };
             for file in files {
+                let file_name = file.file_name().unwrap().to_string_lossy().to_string();
+                bar.set_message(file_name);
                 let ingestoutput =
                     ingest_document(&store, &mut embedder, ctx, file, &ingestopts).await?;
                 match ingestoutput {
                     IngestionOutcome::Unchanged => info!("No change in indexing"),
                     IngestionOutcome::Indexed(cks) => info!("Indexed {cks} chunks"),
                 }
+                bar.inc(1);
             }
+            bar.finish_with_message("done");
+            //store.build_fts_context_index().await?;
+            store.build_fts_index().await?;
         }
         Operation::Search { query, opts } => {
-            info!("Peforming search with \"{}\"", query);
+            println!("Peforming search with \"{}\"", query);
             let store = Store::open(data_dir.join("db")).await?;
             let mut embedder = Embedder::new()?;
             if opts.no_rerank {
@@ -126,9 +146,9 @@ async fn main() -> anyhow::Result<()> {
                     rrf_k: 60.0,
                     top_k: 3,
                 };
-                let retrieved = hybrid_search(&store, &mut embedder, query, &p).await?;
+                let retrieved = hybrid_search(&store, &mut embedder, &query, &p).await?;
                 for h in retrieved.hits {
-                    info!("Score {0}\n{1}\n\n", h.score, h.text);
+                    println!("Score {0}\n{1}\n\n", h.score, h.text);
                 }
             } else {
                 let p = RetrieveParams {
@@ -139,14 +159,14 @@ async fn main() -> anyhow::Result<()> {
                     rerank: true,
                 };
                 let reranker = Reranker::new(data_dir.join("reranker"))?;
-                let retrived = retrieve(&store, &mut embedder, &reranker, query, &p).await?;
+                let retrived = retrieve(&store, &mut embedder, &reranker, &query, &p).await?;
                 for h in retrived.hits {
-                    info!("Score {0}\n{1}\n\n", h.score, h.text);
+                    println!("Score {0}\n{1}\n\n", h.score, h.text);
                 }
             }
         }
         Operation::Ask { question } => {
-            info!("User asked \"{}\"", question);
+            println!("User asked \"{}\"", question);
             let ollama_cli = Ollama::new(
                 "http://localhost:11434".to_string(),
                 "qwen3.5:4b".to_string(),
@@ -160,7 +180,7 @@ async fn main() -> anyhow::Result<()> {
             };
             let db = Store::open(data_dir.join("db")).await?;
             let mut embedder = Embedder::new()?;
-            match plan_answer(&db, &mut embedder, question, &p).await? {
+            match plan_answer(&db, &mut embedder, &question, &p).await? {
                 AskPlan::NoContext => warn!("I dont know based on the indexed document"),
                 AskPlan::Ready {
                     messages,
@@ -173,11 +193,38 @@ async fn main() -> anyhow::Result<()> {
 
                     while let Some(token) = resp.next().await {
                         let token = token?;
-                        info!("{token}");
+                        println!("{token}");
                         std::io::stdout().flush()?;
                         answer.push_str(&token);
                     }
                 }
+            }
+        }
+        Operation::Eval { path, k, result } => {
+            let cases = mnemo_eval::dataset::load(&path)?;
+            let reranker = Reranker::new(data_dir.join("models"))?;
+            use mnemo_eval::runner::{Mode::*, run_mode};
+            let mut embedder = Embedder::new()?;
+            let store = Store::open(data_dir.join("db")).await?;
+            for (name, mode) in [
+                ("vector", Vector),
+                ("fts", Fts),
+                ("hybrid", Hybrid),
+                ("hybridrerank", HybridRerank),
+            ] {
+                let (totals, per_query) =
+                    run_mode(&mode, &cases, &store, &mut embedder, &reranker, k).await?;
+                mnemo_eval::report::report(
+                    &result,
+                    &ModeMetrics {
+                        mode: name.to_string(),
+                        hit: totals.hit,
+                        recall: totals.recall,
+                        mrr: totals.mrr,
+                        ndcg: totals.ndcg,
+                        ms_per_query: per_query.as_millis() as f64,
+                    },
+                )?;
             }
         }
     }

@@ -6,7 +6,6 @@ pub fn get_files(path: &PathBuf) -> anyhow::Result<Vec<PathBuf>> {
         let file = file?;
         let file_path = file.path();
         if file_path.extension() == Some(OsStr::new("md")) {
-            println!("Found");
             result.push(file_path);
         }
     }

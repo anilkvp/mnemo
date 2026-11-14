@@ -1,5 +1,4 @@
-//! Ingetion related functions
-
+/// Ingetion related functions
 use crate::{
     context::Contextulizer,
     embed::Embedder,

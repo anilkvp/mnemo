@@ -1,0 +1,300 @@
+{"query": "what does my training week look like from start to finish", "relevant": [["workout_routine_table.md", 0]], "category": "paraphrase"}
+{"query": "on the off days between sessions, what light activity is planned", "relevant": [["workout_routine_table.md", 0]], "category": "paraphrase"}
+{"query": "what's the hour-by-hour plan on a day I lift in the evening", "relevant": [["workout_routine_table.md", 1]], "category": "paraphrase"}
+{"query": "when do I begin drinking fluids ahead of the session", "relevant": [["workout_routine_table.md", 1]], "category": "paraphrase"}
+{"query": "leg day exercise list in the first three weeks", "relevant": [["workout_routine_table.md", 3]], "category": "paraphrase"}
+{"query": "holding a dumbbell at the chest and squatting, how many sets", "relevant": [["workout_routine_table.md", 3]], "category": "paraphrase"}
+{"query": "hinge movement that targets the back of the thighs", "relevant": [["workout_routine_table.md", 3]], "category": "paraphrase"}
+{"query": "single-leg squat with the rear foot elevated", "relevant": [["workout_routine_table.md", 3]], "category": "paraphrase"}
+{"query": "chest pressing lying on the ground instead of a bench", "relevant": [["workout_routine_table.md", 4]], "category": "paraphrase"}
+{"query": "raising dumbbells out to the side for shoulders, what weight", "relevant": [["workout_routine_table.md", 4]], "category": "paraphrase"}
+{"query": "back-day rowing movements and their sets", "relevant": [["workout_routine_table.md", 6]], "category": "paraphrase"}
+{"query": "arm and grip work at the end of pull day", "relevant": [["workout_routine_table.md", 6]], "category": "paraphrase"}
+{"query": "light leg session during recovery week", "relevant": [["workout_routine_table.md", 8]], "category": "paraphrase"}
+{"query": "stretches during the lunch break", "relevant": [["workout_routine_table.md", 10]], "category": "paraphrase"}
+{"query": "relaxing poses right before sleeping", "relevant": [["workout_routine_table.md", 10]], "category": "paraphrase"}
+{"query": "what should each meal of the day contain", "relevant": [["workout_routine_table.md", 12]], "category": "paraphrase"}
+{"query": "how many working sets each body part gets per week", "relevant": [["workout_routine_table.md", 14]], "category": "paraphrase"}
+{"query": "symptoms that mean I must end the session right away", "relevant": [["workout_routine_table.md", 15]], "category": "paraphrase"}
+{"query": "signs I should take an additional day off", "relevant": [["workout_routine_table.md", 15]], "category": "paraphrase"}
+{"query": "pills and powders I could take, after asking a doctor", "relevant": [["workout_routine_table.md", 17]], "category": "paraphrase"}
+{"query": "what results can I anticipate and when", "relevant": [["workout_routine_table.md", 19]], "category": "paraphrase"}
+{"query": "the most important habits for this plan to work", "relevant": [["workout_routine_table.md", 20]], "category": "paraphrase"}
+{"query": "step by step what to do if my shoulder blade starts hurting mid-session", "relevant": [["workout_routine_table.md", 21]], "category": "paraphrase"}
+{"query": "the thing I'm supposed to eat half an hour before", "relevant": [["workout_routine_table.md", 1]], "category": "vague"}
+{"query": "the part they called non-negotiable", "relevant": [["workout_routine_table.md", 1]], "category": "vague"}
+{"query": "those Y T W things", "relevant": [["workout_routine_table.md", 2]], "category": "vague"}
+{"query": "the one where I pull the band up to eye level", "relevant": [["workout_routine_table.md", 3]], "category": "vague"}
+{"query": "the overhead arm extension, keep elbows still", "relevant": [["workout_routine_table.md", 4]], "category": "vague"}
+{"query": "the rows where I just squeeze blades with a light 5kg", "relevant": [["workout_routine_table.md", 3]], "category": "vague"}
+{"query": "the curl with thumbs facing up", "relevant": [["workout_routine_table.md", 6]], "category": "vague"}
+{"query": "the wrist ones palms down", "relevant": [["workout_routine_table.md", 6]], "category": "vague"}
+{"query": "the W one", "relevant": [["workout_routine_table.md", 7]], "category": "vague"}
+{"query": "the knee push-up day", "relevant": [["workout_routine_table.md", 8]], "category": "vague"}
+{"query": "the stretch in the doorframe", "relevant": [["workout_routine_table.md", 10]], "category": "vague"}
+{"query": "the yoga-ish spine one, arch and round", "relevant": [["workout_routine_table.md", 10]], "category": "vague"}
+{"query": "the shoulder release where you thread an arm under", "relevant": [["workout_routine_table.md", 10]], "category": "vague"}
+{"query": "that yellow drink thing in the morning", "relevant": [["workout_routine_table.md", 17]], "category": "vague"}
+{"query": "the south indian breakfast with sambar", "relevant": [["workout_routine_table.md", 13]], "category": "vague"}
+{"query": "the part saying shoulder blade work never gets cut", "relevant": [["workout_routine_table.md", 14]], "category": "vague"}
+{"query": "wed push day exrcises??", "relevant": [["workout_routine_table.md", 4]], "category": "handwritten"}
+{"query": "fri pull day wat all", "relevant": [["workout_routine_table.md", 6]], "category": "handwritten"}
+{"query": "warmup how many mins", "relevant": [["workout_routine_table.md", 1]], "category": "handwritten"}
+{"query": "goblet sqaut reps n weight", "relevant": [["workout_routine_table.md", 3]], "category": "handwritten"}
+{"query": "rdl sets?", "relevant": [["workout_routine_table.md", 3]], "category": "handwritten"}
+{"query": "plank how long in core circut", "relevant": [["workout_routine_table.md", 4]], "category": "handwritten"}
+{"query": "bent over row weight 10kg?", "relevant": [["workout_routine_table.md", 6]], "category": "handwritten"}
+{"query": "revers flyes reps", "relevant": [["workout_routine_table.md", 6]], "category": "handwritten"}
+{"query": "delod week sets n weight", "relevant": [["workout_routine_table.md", 7]], "category": "handwritten"}
+{"query": "how much watr per day", "relevant": [["workout_routine_table.md", 11]], "category": "handwritten"}
+{"query": "calries per day target", "relevant": [["workout_routine_table.md", 11]], "category": "handwritten"}
+{"query": "protien how many grams", "relevant": [["workout_routine_table.md", 11]], "category": "handwritten"}
+{"query": "dinner time n wat to eat", "relevant": [["workout_routine_table.md", 12]], "category": "handwritten"}
+{"query": "sat sun food plan", "relevant": [["workout_routine_table.md", 13]], "category": "handwritten"}
+{"query": "fish oil dose", "relevant": [["workout_routine_table.md", 17]], "category": "handwritten"}
+{"query": "vit d how much", "relevant": [["workout_routine_table.md", 17]], "category": "handwritten"}
+{"query": "magnesium b4 bed", "relevant": [["workout_routine_table.md", 17]], "category": "handwritten"}
+{"query": "numbness in arm shud i see doc", "relevant": [["workout_routine_table.md", 15]], "category": "handwritten"}
+{"query": "morning scap routine 3 min", "relevant": [["workout_routine_table.md", 9]], "category": "handwritten"}
+{"query": "which training day is the longest and by how much over the others", "relevant": [["workout_routine_table.md", 0]], "category": "hard"}
+{"query": "how many total minutes of lifting per week excluding rest-day mobility", "relevant": [["workout_routine_table.md", 0]], "category": "hard"}
+{"query": "how long between finishing the cool-down and eating dinner", "relevant": [["workout_routine_table.md", 1]], "category": "hard"}
+{"query": "which leg exercise uses the slowest descent and a pause at the top", "relevant": [["workout_routine_table.md", 3]], "category": "hard"}
+{"query": "which pushing exercise gets the longest rest between sets", "relevant": [["workout_routine_table.md", 4]], "category": "hard"}
+{"query": "is there any exercise on push day that should be done only with 5kg", "relevant": [["workout_routine_table.md", 4]], "category": "hard"}
+{"query": "total number of face pull sets across the three loading-phase days", "relevant": [["workout_routine_table.md", 3], ["workout_routine_table.md", 5], ["workout_routine_table.md", 6]], "category": "hard"}
+{"query": "by what percentage is the weight reduced in deload week", "relevant": [["workout_routine_table.md", 7]], "category": "hard"}
+{"query": "in deload, do I still train to failure?", "relevant": [["workout_routine_table.md", 7]], "category": "hard"}
+{"query": "does the scapular protocol get reduced in week 4 on leg day", "relevant": [["workout_routine_table.md", 8]], "category": "hard"}
+{"query": "which body part drops to zero sets in deload", "relevant": [["workout_routine_table.md", 14]], "category": "hard"}
+{"query": "which muscle group has the biggest percentage drop besides forearms", "relevant": [["workout_routine_table.md", 14]], "category": "hard"}
+{"query": "how much water is drunk during the actual workout window", "relevant": [["workout_routine_table.md", 11]], "category": "hard"}
+{"query": "is the meal plan a calorie surplus or deficit", "relevant": [["workout_routine_table.md", 11]], "category": "hard"}
+{"query": "which meal has no carbohydrate source", "relevant": [["workout_routine_table.md", 12]], "category": "hard"}
+{"query": "which days have fish for dinner", "relevant": [["workout_routine_table.md", 13]], "category": "hard"}
+{"query": "which symptom only requires stopping the exercise, not the session", "relevant": [["workout_routine_table.md", 15]], "category": "hard"}
+{"query": "which symptoms need a doctor the same day", "relevant": [["workout_routine_table.md", 15]], "category": "hard"}
+{"query": "which supplements should be taken in the morning", "relevant": [["workout_routine_table.md", 17]], "category": "hard"}
+{"query": "what are the two measurements taken on Mondays", "relevant": [["workout_routine_table.md", 18]], "category": "hard"}
+{"query": "which success factors are only important, not critical", "relevant": [["workout_routine_table.md", 20]], "category": "hard"}
+{"query": "after how many days without improvement do I see a physio", "relevant": [["workout_routine_table.md", 21]], "category": "hard"}
+{"query": "the hydration target in success factors vs the schedule total, do they match", "relevant": [["workout_routine_table.md", 11], ["workout_routine_table.md", 20]], "category": "hard"}
+{"query": "face pulls on push day, how many reps", "relevant": [["workout_routine_table.md", 5]], "category": "contextual"}
+{"query": "how long does the wednesday session take", "relevant": [["workout_routine_table.md", 5]], "category": "contextual"}
+{"query": "monday's ab circuit", "relevant": [["workout_routine_table.md", 4]], "category": "contextual"}
+{"query": "how long is the monday session", "relevant": [["workout_routine_table.md", 4]], "category": "contextual"}
+{"query": "friday's final exercise", "relevant": [["workout_routine_table.md", 7]], "category": "contextual"}
+{"query": "how long is pull day", "relevant": [["workout_routine_table.md", 7]], "category": "contextual"}
+{"query": "wednesday in deload week", "relevant": [["workout_routine_table.md", 8]], "category": "contextual"}
+{"query": "what to do at lunch for my shoulders", "relevant": [["workout_routine_table.md", 10]], "category": "contextual"}
+{"query": "hydration at 1 pm", "relevant": [["workout_routine_table.md", 11]], "category": "contextual"}
+{"query": "lunch protein in the meal timing", "relevant": [["workout_routine_table.md", 12]], "category": "contextual"}
+{"query": "thursday dinner in the weekly menu", "relevant": [["workout_routine_table.md", 13]], "category": "contextual"}
+{"query": "morning stiffness in my shoulders, what to do", "relevant": [["workout_routine_table.md", 15]], "category": "contextual"}
+{"query": "walnuts how many", "relevant": [["workout_routine_table.md", 17]], "category": "contextual"}
+{"query": "everywhere band pull-aparts appear", "relevant": [["workout_routine_table.md", 2], ["workout_routine_table.md", 3], ["workout_routine_table.md", 9]], "category": "multi"}
+{"query": "all the face pull prescriptions including deload", "relevant": [["workout_routine_table.md", 3], ["workout_routine_table.md", 5], ["workout_routine_table.md", 6], ["workout_routine_table.md", 9]], "category": "multi"}
+{"query": "compare goblet squats in loading phase vs deload", "relevant": [["workout_routine_table.md", 3], ["workout_routine_table.md", 8]], "category": "multi"}
+{"query": "compare bicep curls normal vs light week", "relevant": [["workout_routine_table.md", 6], ["workout_routine_table.md", 9]], "category": "multi"}
+{"query": "everything I do in week 4", "relevant": [["workout_routine_table.md", 7], ["workout_routine_table.md", 8], ["workout_routine_table.md", 9]], "category": "multi"}
+{"query": "the whole warm up phases 1 2 3", "relevant": [["workout_routine_table.md", 1], ["workout_routine_table.md", 2]], "category": "multi"}
+{"query": "where is coconut water mentioned", "relevant": [["workout_routine_table.md", 1], ["workout_routine_table.md", 11], ["workout_routine_table.md", 12]], "category": "multi"}
+{"query": "wall slides in the program", "relevant": [["workout_routine_table.md", 5], ["workout_routine_table.md", 9]], "category": "multi"}
+{"query": "the whole shoulder pain safety guidance", "relevant": [["workout_routine_table.md", 15], ["workout_routine_table.md", 21]], "category": "multi"}
+{"query": "everything about deload across the document", "relevant": [["workout_routine_table.md", 7], ["workout_routine_table.md", 14], ["workout_routine_table.md", 18], ["workout_routine_table.md", 20]], "category": "multi"}
+{"query": "what level should I already be at before starting the Rust plan", "relevant": [["rust-mastery-45-days.md", 0]], "category": "paraphrase"}
+{"query": "how much time each day does the course expect", "relevant": [["rust-mastery-45-days.md", 0]], "category": "paraphrase"}
+{"query": "what tools to install before day one", "relevant": [["rust-mastery-45-days.md", 1]], "category": "paraphrase"}
+{"query": "difference between duplicating a value explicitly vs implicitly bit-copying", "relevant": [["rust-mastery-45-days.md", 1]], "category": "paraphrase"}
+{"query": "fixing borrow errors without duplicating data", "relevant": [["rust-mastery-45-days.md", 2]], "category": "paraphrase"}
+{"query": "why a mutable reference really means exclusive access", "relevant": [["rust-mastery-45-days.md", 2]], "category": "paraphrase"}
+{"query": "mutating through a shared reference with runtime checks", "relevant": [["rust-mastery-45-days.md", 4]], "category": "paraphrase"}
+{"query": "library errors vs app errors crates", "relevant": [["rust-mastery-45-days.md", 5]], "category": "paraphrase"}
+{"query": "cleanup code that runs automatically when a value goes out of scope", "relevant": [["rust-mastery-45-days.md", 5]], "category": "paraphrase"}
+{"query": "implementing a trait for every type that satisfies another trait", "relevant": [["rust-mastery-45-days.md", 6]], "category": "paraphrase"}
+{"query": "how generic code gets duplicated per type and the cost", "relevant": [["rust-mastery-45-days.md", 7]], "category": "paraphrase"}
+{"query": "types tied to a trait like Iterator Item", "relevant": [["rust-mastery-45-days.md", 8]], "category": "paraphrase"}
+{"query": "writing my own iterator adapter that groups items", "relevant": [["rust-mastery-45-days.md", 9]], "category": "paraphrase"}
+{"query": "the three callable traits and how captures decide which", "relevant": [["rust-mastery-45-days.md", 10]], "category": "paraphrase"}
+{"query": "encoding state in the type so methods only exist when valid", "relevant": [["rust-mastery-45-days.md", 10]], "category": "paraphrase"}
+{"query": "limiting how many tasks run at once with permits", "relevant": [["rust-mastery-45-days.md", 13]], "category": "paraphrase"}
+{"query": "stopping a server cleanly while finishing pending work", "relevant": [["rust-mastery-45-days.md", 14]], "category": "paraphrase"}
+{"query": "data parallel iterators with work stealing", "relevant": [["rust-mastery-45-days.md", 15]], "category": "paraphrase"}
+{"query": "documenting why an unsafe block is sound", "relevant": [["rust-mastery-45-days.md", 16]], "category": "paraphrase"}
+{"query": "panics crossing language boundaries", "relevant": [["rust-mastery-45-days.md", 17]], "category": "paraphrase"}
+{"query": "generating code from struct definitions at compile time", "relevant": [["rust-mastery-45-days.md", 18]], "category": "paraphrase"}
+{"query": "finding allocation hot spots and speeding up code", "relevant": [["rust-mastery-45-days.md", 19]], "category": "paraphrase"}
+{"query": "the layers from registers up to portable drivers", "relevant": [["rust-mastery-45-days.md", 22]], "category": "paraphrase"}
+{"query": "async executor for microcontrollers without an RTOS", "relevant": [["rust-mastery-45-days.md", 24]], "category": "paraphrase"}
+{"query": "calling hosted LLM HTTP APIs and streaming the response", "relevant": [["rust-mastery-45-days.md", 26]], "category": "paraphrase"}
+{"query": "counting tokens to estimate cost", "relevant": [["rust-mastery-45-days.md", 27]], "category": "paraphrase"}
+{"query": "nearest neighbour search over embeddings", "relevant": [["rust-mastery-45-days.md", 28]], "category": "paraphrase"}
+{"query": "pipeline that retrieves documents and feeds them to the model", "relevant": [["rust-mastery-45-days.md", 29]], "category": "paraphrase"}
+{"query": "running a language model on my own machine in Rust", "relevant": [["rust-mastery-45-days.md", 30]], "category": "paraphrase"}
+{"query": "letting the model call functions in a loop", "relevant": [["rust-mastery-45-days.md", 31]], "category": "paraphrase"}
+{"query": "criteria for the final project to be considered finished", "relevant": [["rust-mastery-45-days.md", 36]], "category": "paraphrase"}
+{"query": "books and videos recommended", "relevant": [["rust-mastery-45-days.md", 37]], "category": "paraphrase"}
+{"query": "the day with the stack exercise", "relevant": [["rust-mastery-45-days.md", 1]], "category": "vague"}
+{"query": "that library book checkout exercise", "relevant": [["rust-mastery-45-days.md", 2]], "category": "vague"}
+{"query": "the tree with parent links one", "relevant": [["rust-mastery-45-days.md", 3]], "category": "vague"}
+{"query": "the json blanket impl thing", "relevant": [["rust-mastery-45-days.md", 6]], "category": "vague"}
+{"query": "the retry combinator", "relevant": [["rust-mastery-45-days.md", 7]], "category": "vague"}
+{"query": "the matrix exercise", "relevant": [["rust-mastery-45-days.md", 8]], "category": "vague"}
+{"query": "the event bus thing", "relevant": [["rust-mastery-45-days.md", 10]], "category": "vague"}
+{"query": "the http builder that won't compile without url", "relevant": [["rust-mastery-45-days.md", 10]], "category": "vague"}
+{"query": "the word count thing with threads", "relevant": [["rust-mastery-45-days.md", 11]], "category": "vague"}
+{"query": "the 'one day of pain' lesson", "relevant": [["rust-mastery-45-days.md", 12]], "category": "vague"}
+{"query": "the health checker exercise", "relevant": [["rust-mastery-45-days.md", 13]], "category": "vague"}
+{"query": "the job queue mini project", "relevant": [["rust-mastery-45-days.md", 14]], "category": "vague"}
+{"query": "the DECISIONS.md thing", "relevant": [["rust-mastery-45-days.md", 15]], "category": "vague"}
+{"query": "the fixed size vec with maybeuninit", "relevant": [["rust-mastery-45-days.md", 16]], "category": "vague"}
+{"query": "the hashmap macro", "relevant": [["rust-mastery-45-days.md", 17]], "category": "vague"}
+{"query": "the tolnay workshop exercise", "relevant": [["rust-mastery-45-days.md", 18]], "category": "vague"}
+{"query": "the 5x speedup exercise", "relevant": [["rust-mastery-45-days.md", 19]], "category": "vague"}
+{"query": "meters and feet thing", "relevant": [["rust-mastery-45-days.md", 20]], "category": "vague"}
+{"query": "which board to buy", "relevant": [["rust-mastery-45-days.md", 21]], "category": "vague"}
+{"query": "the blinky lesson", "relevant": [["rust-mastery-45-days.md", 22]], "category": "vague"}
+{"query": "the no polling rule", "relevant": [["rust-mastery-45-days.md", 23]], "category": "vague"}
+{"query": "the BME280 bit", "relevant": [["rust-mastery-45-days.md", 24]], "category": "vague"}
+{"query": "the environment monitor mini project", "relevant": [["rust-mastery-45-days.md", 25]], "category": "vague"}
+{"query": "the ollama fallback", "relevant": [["rust-mastery-45-days.md", 26]], "category": "vague"}
+{"query": "chat with my docs", "relevant": [["rust-mastery-45-days.md", 29]], "category": "vague"}
+{"query": "the calculator read_file web_fetch agent", "relevant": [["rust-mastery-45-days.md", 31]], "category": "vague"}
+{"query": "the oha load test", "relevant": [["rust-mastery-45-days.md", 32]], "category": "vague"}
+{"query": "the 80 percent coverage rule", "relevant": [["rust-mastery-45-days.md", 36]], "category": "vague"}
+{"query": "rust day 1 wat topics", "relevant": [["rust-mastery-45-days.md", 1]], "category": "handwritten"}
+{"query": "lifetimes day exersise", "relevant": [["rust-mastery-45-days.md", 3]], "category": "handwritten"}
+{"query": "refcell vs cell vs oncecell", "relevant": [["rust-mastery-45-days.md", 4]], "category": "handwritten"}
+{"query": "thiserorr anyhow when", "relevant": [["rust-mastery-45-days.md", 5]], "category": "handwritten"}
+{"query": "orphan rule fix??", "relevant": [["rust-mastery-45-days.md", 6]], "category": "handwritten"}
+{"query": "object saftey dyn trait", "relevant": [["rust-mastery-45-days.md", 7]], "category": "handwritten"}
+{"query": "GAT lending iterater", "relevant": [["rust-mastery-45-days.md", 8]], "category": "handwritten"}
+{"query": "closure fnmut y", "relevant": [["rust-mastery-45-days.md", 10]], "category": "handwritten"}
+{"query": "mutexguard across await prob", "relevant": [["rust-mastery-45-days.md", 14]], "category": "handwritten"}
+{"query": "rayon vs tokio when", "relevant": [["rust-mastery-45-days.md", 15]], "category": "handwritten"}
+{"query": "miri ub check", "relevant": [["rust-mastery-45-days.md", 16]], "category": "handwritten"}
+{"query": "ffi cstring", "relevant": [["rust-mastery-45-days.md", 17]], "category": "handwritten"}
+{"query": "proc macro syn quote trybuild", "relevant": [["rust-mastery-45-days.md", 18]], "category": "handwritten"}
+{"query": "criterion flamegrph", "relevant": [["rust-mastery-45-days.md", 19]], "category": "handwritten"}
+{"query": "thumbv6m target", "relevant": [["rust-mastery-45-days.md", 21]], "category": "handwritten"}
+{"query": "embedded hal outputpin generic", "relevant": [["rust-mastery-45-days.md", 22]], "category": "handwritten"}
+{"query": "static mut y bad", "relevant": [["rust-mastery-45-days.md", 23]], "category": "handwritten"}
+{"query": "embassy vs rtic", "relevant": [["rust-mastery-45-days.md", 24]], "category": "handwritten"}
+{"query": "heapless ring buf", "relevant": [["rust-mastery-45-days.md", 25]], "category": "handwritten"}
+{"query": "sse streaming reqwest", "relevant": [["rust-mastery-45-days.md", 26]], "category": "handwritten"}
+{"query": "bpe tokenizer crate", "relevant": [["rust-mastery-45-days.md", 27]], "category": "handwritten"}
+{"query": "cosine sim vector stor", "relevant": [["rust-mastery-45-days.md", 28]], "category": "handwritten"}
+{"query": "candle gguf quantize", "relevant": [["rust-mastery-45-days.md", 30]], "category": "handwritten"}
+{"query": "agent max iter guard", "relevant": [["rust-mastery-45-days.md", 31]], "category": "handwritten"}
+{"query": "axum sse rate limit", "relevant": [["rust-mastery-45-days.md", 32]], "category": "handwritten"}
+{"query": "proptest insta nextest", "relevant": [["rust-mastery-45-days.md", 33]], "category": "handwritten"}
+{"query": "rust atomics locks book", "relevant": [["rust-mastery-45-days.md", 37]], "category": "handwritten"}
+{"query": "which day ends with the first mini project", "relevant": [["rust-mastery-45-days.md", 4]], "category": "hard"}
+{"query": "which earlier exercise does the rayon day reuse", "relevant": [["rust-mastery-45-days.md", 15]], "category": "hard"}
+{"query": "which earlier pattern shows up again in pin configuration", "relevant": [["rust-mastery-45-days.md", 23]], "category": "hard"}
+{"query": "which earlier project gets an API review in week 4", "relevant": [["rust-mastery-45-days.md", 20]], "category": "hard"}
+{"query": "which week's ideas does the rate limiter reuse", "relevant": [["rust-mastery-45-days.md", 32]], "category": "hard"}
+{"query": "the RAG mini project depends on which two earlier days", "relevant": [["rust-mastery-45-days.md", 29]], "category": "hard"}
+{"query": "which day extends the chat CLI into an agent", "relevant": [["rust-mastery-45-days.md", 31]], "category": "hard"}
+{"query": "what memory ordering should I use if unsure", "relevant": [["rust-mastery-45-days.md", 11]], "category": "hard"}
+{"query": "how many threads hammer the metrics registry", "relevant": [["rust-mastery-45-days.md", 11]], "category": "hard"}
+{"query": "how many vectors in the brute force benchmark", "relevant": [["rust-mastery-45-days.md", 28]], "category": "hard"}
+{"query": "dataset size for the rayon benchmark", "relevant": [["rust-mastery-45-days.md", 15]], "category": "hard"}
+{"query": "how many commits for the optimisation exercise", "relevant": [["rust-mastery-45-days.md", 19]], "category": "hard"}
+{"query": "how many tools does the mini agent get", "relevant": [["rust-mastery-45-days.md", 31]], "category": "hard"}
+{"query": "which async runtime is NOT allowed on day 17", "relevant": [["rust-mastery-45-days.md", 12]], "category": "hard"}
+{"query": "which capstone needs no external APIs", "relevant": [["rust-mastery-45-days.md", 35]], "category": "hard"}
+{"query": "which capstone shares a no_std crate between firmware and host", "relevant": [["rust-mastery-45-days.md", 35]], "category": "hard"}
+{"query": "how many weeks is the capstone expected to take", "relevant": [["rust-mastery-45-days.md", 35]], "category": "hard"}
+{"query": "what's the main companion book for weeks 1-4", "relevant": [["rust-mastery-45-days.md", 37]], "category": "hard"}
+{"query": "which Gen-AI pieces in Rust are listed as the four areas", "relevant": [["rust-mastery-45-days.md", 25]], "category": "hard"}
+{"query": "which Rust plan days end on a Friday mini project", "relevant": [["rust-mastery-45-days.md", 0]], "category": "hard"}
+{"query": "what's the exercise in week 3's first day", "relevant": [["rust-mastery-45-days.md", 11]], "category": "contextual"}
+{"query": "first exercise of the embedded week", "relevant": [["rust-mastery-45-days.md", 21]], "category": "contextual"}
+{"query": "first lesson of the gen ai week", "relevant": [["rust-mastery-45-days.md", 26]], "category": "contextual"}
+{"query": "what week is the unsafe material in", "relevant": [["rust-mastery-45-days.md", 16]], "category": "contextual"}
+{"query": "week 2 opening exercise", "relevant": [["rust-mastery-45-days.md", 6]], "category": "contextual"}
+{"query": "last review day of week 1", "relevant": [["rust-mastery-45-days.md", 5]], "category": "contextual"}
+{"query": "week 3 review day", "relevant": [["rust-mastery-45-days.md", 15]], "category": "contextual"}
+{"query": "what goes into the weeks 5-6 api review", "relevant": [["rust-mastery-45-days.md", 34]], "category": "contextual"}
+{"query": "every mini-project in the rust plan", "relevant": [["rust-mastery-45-days.md", 4], ["rust-mastery-45-days.md", 9], ["rust-mastery-45-days.md", 14], ["rust-mastery-45-days.md", 25], ["rust-mastery-45-days.md", 29], ["rust-mastery-45-days.md", 32]], "category": "multi"}
+{"query": "all the embedded week lessons", "relevant": [["rust-mastery-45-days.md", 21], ["rust-mastery-45-days.md", 22], ["rust-mastery-45-days.md", 23], ["rust-mastery-45-days.md", 24], ["rust-mastery-45-days.md", 25]], "category": "multi"}
+{"query": "all the async lessons", "relevant": [["rust-mastery-45-days.md", 12], ["rust-mastery-45-days.md", 13], ["rust-mastery-45-days.md", 14], ["rust-mastery-45-days.md", 24]], "category": "multi"}
+{"query": "where is cargo expand used", "relevant": [["rust-mastery-45-days.md", 1], ["rust-mastery-45-days.md", 7], ["rust-mastery-45-days.md", 17]], "category": "multi"}
+{"query": "lessons using proptest", "relevant": [["rust-mastery-45-days.md", 27], ["rust-mastery-45-days.md", 33], ["rust-mastery-45-days.md", 35]], "category": "multi"}
+{"query": "everything about macros", "relevant": [["rust-mastery-45-days.md", 17], ["rust-mastery-45-days.md", 18]], "category": "multi"}
+{"query": "graceful shutdown mentions", "relevant": [["rust-mastery-45-days.md", 14], ["rust-mastery-45-days.md", 32], ["rust-mastery-45-days.md", 35]], "category": "multi"}
+{"query": "where is criterion used for benchmarks", "relevant": [["rust-mastery-45-days.md", 19], ["rust-mastery-45-days.md", 28], ["rust-mastery-45-days.md", 35]], "category": "multi"}
+{"query": "reaction timer evolution across days", "relevant": [["rust-mastery-45-days.md", 23], ["rust-mastery-45-days.md", 24]], "category": "multi"}
+{"query": "where wokwi is mentioned", "relevant": [["rust-mastery-45-days.md", 21], ["rust-mastery-45-days.md", 22], ["rust-mastery-45-days.md", 24], ["rust-mastery-45-days.md", 37]], "category": "multi"}
+{"query": "all the axum + SSE work", "relevant": [["rust-mastery-45-days.md", 32], ["rust-mastery-45-days.md", 35], ["rust-mastery-45-days.md", 37]], "category": "multi"}
+{"query": "in which order should I build them", "relevant": [["datacenter-agent-skills.md", 0]], "category": "paraphrase"}
+{"query": "turn a written procedure into automation code with a dry run", "relevant": [["datacenter-agent-skills.md", 1]], "category": "paraphrase"}
+{"query": "compare device configuration against a reference and ignore irrelevant differences", "relevant": [["datacenter-agent-skills.md", 2]], "category": "paraphrase"}
+{"query": "why a model beats a script for config diffs", "relevant": [["datacenter-agent-skills.md", 3]], "category": "paraphrase"}
+{"query": "checking infrastructure-as-code changes for how much could break", "relevant": [["datacenter-agent-skills.md", 3]], "category": "paraphrase"}
+{"query": "how to make the IaC review work in Codex", "relevant": [["datacenter-agent-skills.md", 4]], "category": "paraphrase"}
+{"query": "rack power and weight planning tool", "relevant": [["datacenter-agent-skills.md", 4]], "category": "paraphrase"}
+{"query": "why the calculation must be deterministic and testable", "relevant": [["datacenter-agent-skills.md", 5]], "category": "paraphrase"}
+{"query": "why post-incident reports tend to be shallow", "relevant": [["datacenter-agent-skills.md", 6]], "category": "paraphrase"}
+{"query": "should most skills include scripts", "relevant": [["datacenter-agent-skills.md", 8]], "category": "paraphrase"}
+{"query": "why keep skill files short", "relevant": [["datacenter-agent-skills.md", 9]], "category": "paraphrase"}
+{"query": "limiting what commands a skill may run", "relevant": [["datacenter-agent-skills.md", 10]], "category": "paraphrase"}
+{"query": "verifying skills don't activate on unrelated prompts", "relevant": [["datacenter-agent-skills.md", 10]], "category": "paraphrase"}
+{"query": "making one skill directory work in every tool", "relevant": [["datacenter-agent-skills.md", 10]], "category": "paraphrase"}
+{"query": "future skills that require real access to systems", "relevant": [["datacenter-agent-skills.md", 10], ["datacenter-agent-skills.md", 11]], "category": "paraphrase"}
+{"query": "6 7 2 1", "relevant": [["datacenter-agent-skills.md", 0]], "category": "vague"}
+{"query": "the golden config one", "relevant": [["datacenter-agent-skills.md", 2]], "category": "vague"}
+{"query": "the terraform one", "relevant": [["datacenter-agent-skills.md", 3]], "category": "vague"}
+{"query": "the paths field note", "relevant": [["datacenter-agent-skills.md", 4]], "category": "vague"}
+{"query": "the capacity.py thing", "relevant": [["datacenter-agent-skills.md", 5]], "category": "vague"}
+{"query": "the postmortem one", "relevant": [["datacenter-agent-skills.md", 6]], "category": "vague"}
+{"query": "where's the template for that report", "relevant": [["datacenter-agent-skills.md", 7]], "category": "vague"}
+{"query": "the one that never executes changes", "relevant": [["datacenter-agent-skills.md", 8]], "category": "vague"}
+{"query": "the six fields thing", "relevant": [["datacenter-agent-skills.md", 10]], "category": "vague"}
+{"query": "the NIC switch port optic triage", "relevant": [["datacenter-agent-skills.md", 11]], "category": "vague"}
+{"query": "the digital twin idea", "relevant": [["datacenter-agent-skills.md", 11]], "category": "vague"}
+{"query": "runbook to ansible playbok", "relevant": [["datacenter-agent-skills.md", 1]], "category": "handwritten"}
+{"query": "config drfit check", "relevant": [["datacenter-agent-skills.md", 2]], "category": "handwritten"}
+{"query": "rack capcity skill", "relevant": [["datacenter-agent-skills.md", 5]], "category": "handwritten"}
+{"query": "incident timline effort", "relevant": [["datacenter-agent-skills.md", 6]], "category": "handwritten"}
+{"query": "decom plan skill", "relevant": [["datacenter-agent-skills.md", 8]], "category": "handwritten"}
+{"query": "disable model invocation which skills", "relevant": [["datacenter-agent-skills.md", 9]], "category": "handwritten"}
+{"query": "allowed tools bash scope", "relevant": [["datacenter-agent-skills.md", 10]], "category": "handwritten"}
+{"query": "skill folder structure scripts reference", "relevant": [["datacenter-agent-skills.md", 9]], "category": "handwritten"}
+{"query": "gpu hrs lost", "relevant": [["datacenter-agent-skills.md", 11]], "category": "handwritten"}
+{"query": "which skill should be built first and why", "relevant": [["datacenter-agent-skills.md", 0]], "category": "hard"}
+{"query": "which skills take about an hour", "relevant": [["datacenter-agent-skills.md", 1], ["datacenter-agent-skills.md", 7]], "category": "hard"}
+{"query": "which skills take half a day", "relevant": [["datacenter-agent-skills.md", 2], ["datacenter-agent-skills.md", 3], ["datacenter-agent-skills.md", 8]], "category": "hard"}
+{"query": "which skill has the largest effort estimate", "relevant": [["datacenter-agent-skills.md", 5]], "category": "hard"}
+{"query": "how many skills need no scripts", "relevant": [["datacenter-agent-skills.md", 8]], "category": "hard"}
+{"query": "does the decommission skill touch live systems", "relevant": [["datacenter-agent-skills.md", 8]], "category": "hard"}
+{"query": "what does the IaC review NOT cover", "relevant": [["datacenter-agent-skills.md", 3], ["datacenter-agent-skills.md", 4]], "category": "hard"}
+{"query": "is config drift check meant to generate configs", "relevant": [["datacenter-agent-skills.md", 3]], "category": "hard"}
+{"query": "is the incident timeline for live log tailing", "relevant": [["datacenter-agent-skills.md", 6]], "category": "hard"}
+{"query": "when should I use skill-creator instead of skill miner", "relevant": [["datacenter-agent-skills.md", 1]], "category": "hard"}
+{"query": "is runbook converter for editing existing playbooks", "relevant": [["datacenter-agent-skills.md", 2]], "category": "hard"}
+{"query": "which frontmatter fields will break outside Claude Code", "relevant": [["datacenter-agent-skills.md", 10]], "category": "hard"}
+{"query": "what part of a long description might get cut off", "relevant": [["datacenter-agent-skills.md", 9]], "category": "hard"}
+{"query": "why is a skill that always triggers bad", "relevant": [["datacenter-agent-skills.md", 10]], "category": "hard"}
+{"query": "what file extensions does the IaC review match", "relevant": [["datacenter-agent-skills.md", 4]], "category": "hard"}
+{"query": "what does the RCA writer take as input from another skill", "relevant": [["datacenter-agent-skills.md", 6]], "category": "hard"}
+{"query": "does the incident timeline flag anything besides ordering", "relevant": [["datacenter-agent-skills.md", 6]], "category": "hard"}
+{"query": "what does the runbook converter take as input", "relevant": [["datacenter-agent-skills.md", 2]], "category": "contextual"}
+{"query": "effort for config drift", "relevant": [["datacenter-agent-skills.md", 3]], "category": "contextual"}
+{"query": "what input does the IaC skill need", "relevant": [["datacenter-agent-skills.md", 4]], "category": "contextual"}
+{"query": "why an agent for decommissioning, ordering", "relevant": [["datacenter-agent-skills.md", 8]], "category": "contextual"}
+{"query": "all eight skill names", "relevant": [["datacenter-agent-skills.md", 1], ["datacenter-agent-skills.md", 2], ["datacenter-agent-skills.md", 3], ["datacenter-agent-skills.md", 4], ["datacenter-agent-skills.md", 5], ["datacenter-agent-skills.md", 6], ["datacenter-agent-skills.md", 7], ["datacenter-agent-skills.md", 8]], "category": "multi"}
+{"query": "every mention of Ansible", "relevant": [["datacenter-agent-skills.md", 1], ["datacenter-agent-skills.md", 3], ["datacenter-agent-skills.md", 7]], "category": "multi"}
+{"query": "all the common design notes", "relevant": [["datacenter-agent-skills.md", 8], ["datacenter-agent-skills.md", 9], ["datacenter-agent-skills.md", 10]], "category": "multi"}
+{"query": "everything on incidents: timeline and rca", "relevant": [["datacenter-agent-skills.md", 6], ["datacenter-agent-skills.md", 7]], "category": "multi"}
+{"query": "anything about timelines", "relevant": [["workout_routine_table.md", 1], ["workout_routine_table.md", 19], ["datacenter-agent-skills.md", 6]], "category": "cross"}
+{"query": "checklists across my documents", "relevant": [["workout_routine_table.md", 18], ["rust-mastery-45-days.md", 20], ["rust-mastery-45-days.md", 34]], "category": "cross"}
+{"query": "where do Python scripts come up", "relevant": [["datacenter-agent-skills.md", 1], ["datacenter-agent-skills.md", 5]], "category": "cross"}
+{"query": "where is a watchdog or safety guard used", "relevant": [["rust-mastery-45-days.md", 25], ["rust-mastery-45-days.md", 31]], "category": "cross"}
+{"query": "tracing or logging for debugging", "relevant": [["rust-mastery-45-days.md", 15], ["rust-mastery-45-days.md", 32], ["datacenter-agent-skills.md", 6]], "category": "cross"}
+{"query": "which documents talk about dry runs or not executing changes", "relevant": [["datacenter-agent-skills.md", 1], ["datacenter-agent-skills.md", 8]], "category": "cross"}
+{"query": "rate limiting", "relevant": [["rust-mastery-45-days.md", 7], ["rust-mastery-45-days.md", 32]], "category": "cross"}
+{"query": "sensor telemetry", "relevant": [["rust-mastery-45-days.md", 35], ["datacenter-agent-skills.md", 11]], "category": "cross"}
+{"query": "things to do every 4 weeks or cycle", "relevant": [["workout_routine_table.md", 16], ["workout_routine_table.md", 18]], "category": "cross"}
+{"query": "what to read first thing in the morning", "relevant": [["workout_routine_table.md", 9], ["rust-mastery-45-days.md", 36]], "category": "cross"}
