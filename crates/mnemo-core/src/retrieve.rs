@@ -61,7 +61,13 @@ pub fn rrf_fuse(lists: &[Vec<Hit>], rrf_k: f32, top_k: usize) -> Vec<Hit> {
         }
     }
     let mut out: Vec<Hit> = fused.into_values().collect();
-    out.sort_by(|a, b| b.score.total_cmp(&a.score));
+    // out.sort_by(|a, b| b.score.total_cmp(&a.score));
+    out.sort_by(|a, b| {
+        b.score
+            .total_cmp(&a.score)
+            .then_with(|| a.doc_id.0.cmp(&b.doc_id.0))
+            .then_with(|| a.chunk_index.cmp(&b.chunk_index))
+    });
     out.truncate(top_k);
     out
 }

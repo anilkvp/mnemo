@@ -1,6 +1,7 @@
 //! Cli application
 
 use std::io::Write;
+use std::time::Instant;
 use std::{
     path::{Path, PathBuf},
     pin::pin,
@@ -21,7 +22,6 @@ use mnemo_core::{
     retrieve::{HybridParams, hybrid_search},
     store::Store,
 };
-use mnemo_eval::report::ModeMetrics;
 use mnemo_llm::ollama::Ollama;
 use tracing::{info, warn};
 use tracing_subscriber::{EnvFilter, fmt, prelude::*};
@@ -73,15 +73,6 @@ enum Operation {
         /// User query
         #[arg(short, long)]
         question: String,
-    },
-    Eval {
-        #[arg(long, default_value = "eval/dataset.jsonl")]
-        path: PathBuf,
-        #[arg(long, default_value_t = 8)]
-        k: usize,
-
-        #[arg(long, default_value = "eval/results.jsonl")]
-        result: PathBuf,
     },
 }
 
@@ -198,33 +189,6 @@ async fn main() -> anyhow::Result<()> {
                         answer.push_str(&token);
                     }
                 }
-            }
-        }
-        Operation::Eval { path, k, result } => {
-            let cases = mnemo_eval::dataset::load(&path)?;
-            let reranker = Reranker::new(data_dir.join("models"))?;
-            use mnemo_eval::runner::{Mode::*, run_mode};
-            let mut embedder = Embedder::new()?;
-            let store = Store::open(data_dir.join("db")).await?;
-            for (name, mode) in [
-                ("vector", Vector),
-                ("fts", Fts),
-                ("hybrid", Hybrid),
-                ("hybridrerank", HybridRerank),
-            ] {
-                let (totals, per_query) =
-                    run_mode(&mode, &cases, &store, &mut embedder, &reranker, k).await?;
-                mnemo_eval::report::report(
-                    &result,
-                    &ModeMetrics {
-                        mode: name.to_string(),
-                        hit: totals.hit,
-                        recall: totals.recall,
-                        mrr: totals.mrr,
-                        ndcg: totals.ndcg,
-                        ms_per_query: per_query.as_millis() as f64,
-                    },
-                )?;
             }
         }
     }

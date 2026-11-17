@@ -4477,7 +4477,6 @@ dependencies = [
  "futures",
  "indicatif",
  "mnemo-core",
- "mnemo-eval",
  "mnemo-llm",
  "tokio",
  "tracing",
@@ -4507,6 +4506,7 @@ name = "mnemo-eval"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "chrono",
  "mnemo-core",
  "serde",
  "serde_json",

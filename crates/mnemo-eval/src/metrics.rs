@@ -1,14 +1,39 @@
 use std::collections::HashSet;
 
 use mnemo_core::store::Hit;
+use serde::Serialize;
 
-#[derive(Default)]
+#[derive(Serialize)]
+pub struct ModeMetrics {
+    pub mode: String,
+    pub hit: f64,
+    pub recall: f64,
+    pub mrr: f64,
+    pub ndcg: f64,
+    pub ms_per_query: f64,
+}
+
+#[derive(Default, Debug)]
 pub struct Totals {
     pub hit: f64,
     pub recall: f64,
     pub mrr: f64,
     pub ndcg: f64,
     pub n: usize,
+}
+
+impl Totals {
+    pub fn averages(&self, mode: &str, ms_per_query: f64) -> ModeMetrics {
+        let n = self.n.max(1) as f64;
+        ModeMetrics {
+            mode: mode.to_string(),
+            hit: self.hit / n,
+            recall: self.recall / n,
+            mrr: self.mrr / n,
+            ndcg: self.ndcg / n,
+            ms_per_query,
+        }
+    }
 }
 
 pub fn score(hits: &[Hit], relevant: &HashSet<(String, u32)>, k: usize, t: &mut Totals) {

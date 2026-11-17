@@ -12,7 +12,7 @@ pub struct Embedder {
 impl Embedder {
     pub fn new() -> anyhow::Result<Embedder> {
         let model = TextEmbedding::try_new(
-            TextInitOptions::new(fastembed::EmbeddingModel::BGESmallENV15)
+            TextInitOptions::new(fastembed::EmbeddingModel::BGEBaseENV15)
                 .with_show_download_progress(true),
         )?;
         Ok(Self {

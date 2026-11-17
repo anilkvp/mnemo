@@ -22,7 +22,7 @@ use tracing::debug;
 const CHUNKS_TABLE: &str = "chunks";
 const DOCUMENT_TABLE: &str = "documents";
 
-const DIM: i32 = 384;
+const DIM: i32 = 768;
 const RESULT_COLS: &[&str] = &["doc_id", "chunk_index", "title", "text", "path", "context"];
 
 pub struct Store {
